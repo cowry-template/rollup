@@ -8,11 +8,11 @@ import { terser } from "rollup-plugin-terser";
 import clear from "rollup-plugin-clear";
 import json from "@rollup/plugin-json"; // 支持在源码中直接引入json文件，不影响下面的
 
-import { buildOutput, getPackageInfo } from "./utils/index.js";
+import { buildOutput, getPackageInfo, getCamelCase } from "./utils/index.js";
 
 const { name, version, author } = getPackageInfo();
 
-const packageName = "wk_utils";
+const packageName = getCamelCase(name);
 // 打包处理的文件，添加的备注信息
 const banner =
   "/*!\n" +

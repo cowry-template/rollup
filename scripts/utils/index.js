@@ -35,3 +35,9 @@ export function buildOutput(types, pkgName, defaultOpts = {}) {
     };
   });
 }
+
+export function getCamelCase(str) {
+  return str.replace(/-([a-z])/g, function (keb, item) {
+    return item.toUpperCase();
+  });
+}
